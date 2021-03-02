@@ -1,0 +1,6 @@
+framework module EMBERSDK {
+  umbrella header "EMBERSDK.h"
+
+  export *
+  module * { export * }
+}
