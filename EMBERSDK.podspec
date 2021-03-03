@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "EMBERSDK"
-  spec.version      = "0.1.1"
+  spec.version      = "0.1.2"
   spec.summary      = "This pod to expose some of the EMBER App features to commercial use."
 
   # This description is used to generate tags and improve search results.
@@ -53,9 +53,12 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "EMBER iOS Team" => "enas@embermed.com" }
+  # spec.author             = { "EMBER iOS Team" => "enas@embermed.com" }
   # Or just: spec.author    = "Enas Ahmed Zaki"
-  # spec.authors            = { "Enas Ahmed Zaki" => "enas@embermed.com" }
+  spec.authors            = {
+                                "Enas Ahmed Zaki": "enas@embermed.com",
+                                "Mohamed Elabd": "m.elabd@embermed.com"
+                            }
   # spec.social_media_url   = "https://twitter.com/Enas Ahmed Zaki"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -151,4 +154,7 @@ Pod::Spec.new do |spec|
     spec.dependency 'NotificationBannerSwift'
     #spec.dependency 'SkyFloatingLabelTextField'
 
+  # Exclude arm64
+    spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
